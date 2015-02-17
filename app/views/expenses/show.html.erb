@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="ui list">
+	<a class="item">
+	  <i class="top aligned right triangle icon"></i>
+	  <div class="content">
+	    <div class="header"><%= "Monto: #{@expense.amount} COP" %></div>
+	    <div class="description"><%= @expense.fecha %></div>
+	    <div class="description"><%= @expense.concept %></div>
+	    <div class="description"><%= @category.name %></div>
+
+	  </div>
+	</a>
+</div>
+<%= link_to 'Edit', edit_expense_path(@expense) %> |
+<%= link_to 'Back', expenses_path %>

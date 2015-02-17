@@ -12,6 +12,50 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require semantic-ui
 //= require_tree .
+
+$( document ).ready(function() {
+	$('.ui.dropdown')
+	  .dropdown()
+	;
+	
+	$('.ui.form.createForm').form({
+	    fecha: {
+	      identifier  : 'expense[fecha]',
+	      rules: [
+	        {
+	          type   : 'empty',
+	          prompt : 'Please enter a valid date'
+	        }
+	      ]
+	    },
+	    amount: {
+	      identifier  : 'expense[amount]',
+	      rules: [
+	        {
+	          type   : 'empty',
+	          prompt : 'Please enter an amount'
+	        }
+	      ]
+	    },
+	     categories: {
+	      identifier  : 'expense[category]',
+	      rules: [
+	        {
+	          type   : 'empty',
+	          prompt : 'Please select a category'
+	        }
+	      ]
+	    },
+	    concept: {
+	      identifier  : 'expense[concept]',
+	      rules: [
+	        {
+	          type   : 'empty',
+	          prompt : 'Please enter your concept'
+	        }
+	      ]
+	    },
+	  });
+});

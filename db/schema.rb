@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20150216224613) do
   create_table "expenses", force: :cascade do |t|
     t.text     "concept"
     t.float    "amount"
+    t.date     "fecha"
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false

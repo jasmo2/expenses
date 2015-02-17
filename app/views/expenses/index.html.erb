@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Expenses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expenses.each do |expense| %>
+      <tr>
+        <td>
+          <!-- 
+            category
+            fecha
+            concept
+            amount
+           -->
+          <div class="ui list">
+            <%= link_to expense_path(expense), class: "item"  do%>
+            <!-- <a class="item"> -->
+              <i class="top aligned right triangle icon"></i>
+              <div class="content">
+              
+                <div class="header"><%= "Monto: #{expense.amount} COP" %></div>
+                <div class="description"><%= expense.fecha %></div>
+
+              </div>
+            <!-- </a> -->
+            <% end %>
+          </div>
+
+        </td>
+        
+        <td><%= link_to 'Edit', edit_expense_path(expense) %></td>
+        <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expense', new_expense_path %>

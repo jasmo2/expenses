@@ -3,6 +3,7 @@ class CreateExpenses < ActiveRecord::Migration
     create_table :expenses do |t|
       t.text :concept
       t.float :amount
+      t.date :fecha
       t.integer :category_id
       t.references :category, index: true
 
