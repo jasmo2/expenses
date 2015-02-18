@@ -11,7 +11,12 @@ class ExpensesController < ApplicationController
   # GET /expenses/1
   # GET /expenses/1.json
   def show
-    @category = Category.find(@expense.category_id)
+    begin
+      @category = Category.find(@expense.category_id)
+    rescue
+      #@expense.category_id = 1
+    end
+
   end
 
   # GET /expenses/new
@@ -40,7 +45,6 @@ class ExpensesController < ApplicationController
       end
     end
   end
-
   # PATCH/PUT /expenses/1
   # PATCH/PUT /expenses/1.json
   def update

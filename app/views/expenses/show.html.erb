@@ -6,7 +6,13 @@
 	    <div class="header"><%= "Monto: #{@expense.amount} COP" %></div>
 	    <div class="description"><%= @expense.fecha %></div>
 	    <div class="description"><%= @expense.concept %></div>
-	    <div class="description"><%= @category.name %></div>
+	    <div class="description"><%  
+	    if @expense.category_id == nil%>
+	   		<%= "No se ah escojido categoría"%>
+		<% else %>
+			<%= @expense.category.name %>
+	   <% end %>
+	   </div>
 
 	  </div>
 	</a>
